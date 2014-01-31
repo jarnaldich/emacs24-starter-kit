@@ -1,0 +1,40 @@
+#+TITLE: Starter Kit Registers
+#+OPTIONS: toc:nil num:nil ^:nil
+
+Configuració per a la màquina EST.
+
+* Starter Kit Registers
+Explicació.
+Exemple monospace: =C-x r j= 
+
+#+name: exemple
+#+begin_src emacs-lisp :results silent
+(defun deploy-production ()
+  "interactive"
+  (interactive)
+  (let* ((name (split-string buffer-file-name "/"))
+         (src-suffix (mapconcat 'identity (member "lib" name) "/"))
+         (target-file (concat "//Nas03/geoproces/DFApplications/OrthoEnvironments/v0.1/" src-suffix)))
+    (copy-file buffer-file-name target-file 1)))
+
+(defun deploy-development ()
+  "interactive"
+  (interactive)
+  (let* ((name (split-string buffer-file-name "/"))
+         (src-suffix (mapconcat 'identity (member "lib" name) "/"))
+         (target-file (concat "//Nas03/geoproces/DFApplications/OrthoEnvironments/v0.2/" src-suffix)))
+    (copy-file buffer-file-name target-file 1)))
+#+end_src
+
+* Usabilitat
+** Shortcuts de teclat
+  #+begin_src emacs-lisp
+     (global-set-key [(meta ?i)] 'join-line)
+  #+end_src
+* Modes
+** Clojure
+  #+begin_src emacs-lisp
+     (setq nrepl-lein-command "J:/.lein/bin/lein.bat")
+  #+end_src
+
+

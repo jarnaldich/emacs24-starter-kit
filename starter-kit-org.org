@@ -98,3 +98,7 @@ directory) file for information on the functions, and see
 
 Code blocks can be loaded into the library of babel from any Org-mode
 file using the `org-babel-lob-ingest' function.
+** Personal customizations
+#+begin_src emacs-lisp
+  (setq org-log-done 'time)
+#+end_src

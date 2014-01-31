@@ -24,4 +24,5 @@ Haskell mode hook
   (add-hook 'haskell-mode-hook 'run-starter-kit-coding-hook)
   (when (window-system)
     (add-hook 'haskell-mode-hook 'pretty-lambdas-haskell))
+  (add-hook 'haskell-mode-hook 'haskell-indent-mode)
 #+end_src
