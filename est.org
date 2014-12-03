@@ -36,5 +36,27 @@ Exemple monospace: =C-x r j=
   #+begin_src emacs-lisp
      (setq nrepl-lein-command "J:/.lein/bin/lein.bat")
   #+end_src
-
+** Modes
+*** Org mode
+  #+begin_src emacs-lisp
+     (setq org-agenda-files (list
+        "c:/Documents and Settings/j.arnaldich/My Documents/My Dropbox/GestioDesenvGeoproces/org"))
+     (setq org-default-notes-files (list
+          "c:/Documents and Settings/j.arnaldich/My Documents/My Dropbox/GestioDesenvGeoproces/org/refile.org"))
+  #+end_src
+*** SLIME
+  #+begin_src emacs-lisp
+(setq inferior-lisp-program "e:\\public\\sbcl\\go.exe")
+(setq slime-contribs '(slime-fancy))
+  #+end_src
+    
+  
+** Utilitats Unix (grep, find, etc...)
+  #+begin_src emacs-lisp
+    (setq mingw-bin "e:\\usuaris\\j.arnaldich\\Soft\\MinGW\\msys\\1.0\\bin")
+    (setenv "PATH" (concat mingw-bin ";" (getenv "PATH")))
+    (setq exec-path (append (list mingw-bin)
+                        exec-path))
+  #+end_src
+  
 
